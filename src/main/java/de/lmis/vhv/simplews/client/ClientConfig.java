@@ -7,11 +7,10 @@ import org.springframework.ws.client.core.WebServiceTemplate;
 
 @Configuration
 public class ClientConfig {
-  @Bean
+    @Bean
     Jaxb2Marshaller jaxb2Marshaller() {
         Jaxb2Marshaller jaxb2Marshaller = new Jaxb2Marshaller();
-        jaxb2Marshaller
-                .setContextPath("de.vhv.types.helloworld");
+        jaxb2Marshaller.setContextPath("de.vhv.types.helloworld");
 
         return jaxb2Marshaller;
     }
@@ -21,8 +20,7 @@ public class ClientConfig {
         WebServiceTemplate webServiceTemplate = new WebServiceTemplate();
         webServiceTemplate.setMarshaller(jaxb2Marshaller());
         webServiceTemplate.setUnmarshaller(jaxb2Marshaller());
-        webServiceTemplate.setDefaultUri(
-                "http://localhost:8080/vhv/ws/helloworld");
+        webServiceTemplate.setDefaultUri("http://localhost:8080/vhv/ws/helloworld");
 
         return webServiceTemplate;
     }

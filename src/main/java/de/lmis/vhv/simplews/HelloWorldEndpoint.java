@@ -16,9 +16,7 @@ public class HelloWorldEndpoint {
     private static final Logger LOGGER =
             LoggerFactory.getLogger(HelloWorldEndpoint.class);
 
-    @PayloadRoot(
-            namespace = "http://vhv.de/types/helloworld",
-            localPart = "person")
+    @PayloadRoot(namespace = "http://vhv.de/types/helloworld", localPart = "person")
     @ResponsePayload
     public Greeting sayHello(@RequestPayload Person request) {
         LOGGER.info("Endpoint received person[firstName={},lastName={}]",

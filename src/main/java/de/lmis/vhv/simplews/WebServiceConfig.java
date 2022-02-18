@@ -13,13 +13,10 @@ import javax.servlet.Servlet;
 @Configuration
 public class WebServiceConfig {
     @Bean
-    public ServletRegistrationBean<Servlet> messageDispatcherServlet(
-            ApplicationContext applicationContext) {
-        MessageDispatcherServlet servlet =
-                new MessageDispatcherServlet();
+    public ServletRegistrationBean<Servlet> messageDispatcherServlet(ApplicationContext applicationContext) {
+        MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
 
-        return new ServletRegistrationBean<>(servlet,
-                "/vhv/ws/*");
+        return new ServletRegistrationBean<>(servlet, "/vhv/ws/*");
     }
 }
